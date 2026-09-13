@@ -29,6 +29,7 @@ char *multiply( char *num1, char *num2 ) {
     int tamanho = tamanho1+tamanho2; 
 
     int *res;
+	
     res =  (int*)calloc(tamanho, sizeof(int));
 
     for( i= tamanho1 - 1; i>=0; i--){
@@ -39,10 +40,11 @@ char *multiply( char *num1, char *num2 ) {
 
             prod = n1 * n2; 
             
-            int pos1 = i + n; 
-            int pos2 = i + n + 1;
+            int pos1 = i + n; // posição do vai um
+            int pos2 = i + n + 1; //posição que estamos somando
 
             int soma = prod + res[pos2];
+			
             res[pos2] = soma % 10;
             res[pos1] += soma / 10;
 
